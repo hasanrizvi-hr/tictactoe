@@ -1,4 +1,3 @@
-
 def printtictactoetable(tictactoetable):
     print(tictactoetable[1] + '|' + tictactoetable[2] + '|' + tictactoetable[3])
     print('-+-+-')
@@ -6,15 +5,11 @@ def printtictactoetable(tictactoetable):
     print('-+-+-')
     print(tictactoetable[7] + '|' + tictactoetable[8] + '|' + tictactoetable[9])
     print("\n")
-
-
 def spaceIsFree(position):
     if tictactoetable[position] == ' ':
         return True
     else:
         return False
-
-
 def insertLetter(letter, position):
     if spaceIsFree(position):
         tictactoetable[position] = letter
@@ -29,17 +24,12 @@ def insertLetter(letter, position):
             else:
                 print("Player wins!")
                 exit()
-
         return
-
-
     else:
         print("Can't insert there! Position already occupied")
         position = int(input("Please enter different position:  "))
         insertLetter(letter, position)
         return
-
-
 def checkForWin():
     if (tictactoetable[1] == tictactoetable[2] and tictactoetable[1] == tictactoetable[3] and tictactoetable[1] != ' '):
         return True
@@ -59,8 +49,6 @@ def checkForWin():
         return True
     else:
         return False
-
-
 def checkWhichMarkWon(mark):
     if tictactoetable[1] == tictactoetable[2] and tictactoetable[1] == tictactoetable[3] and tictactoetable[1] == mark:
         return True
@@ -80,21 +68,15 @@ def checkWhichMarkWon(mark):
         return True
     else:
         return False
-
-
 def checkDraw():
     for key in tictactoetable.keys():
         if (tictactoetable[key] == ' '):
             return False
     return True
-
-
 def playerMove():
     position = int(input("Enter the position for 'O':  "))
     insertLetter(player, position)
     return
-
-
 def compMove():
     bestScore = -800
     bestMove = 0
@@ -106,11 +88,8 @@ def compMove():
             if (score > bestScore):
                 bestScore = score
                 bestMove = key
-
     insertLetter(bot, bestMove)
     return
-
-
 def minimax(tictactoetable, depth, isMaximizing):
     if (checkWhichMarkWon(bot)):
         return 1
@@ -155,7 +134,6 @@ print("7, 8, 9 ")
 print("\n")
 player = 'O'
 bot = 'X'
-
 
 global firstComputerMove
 firstComputerMove = True
