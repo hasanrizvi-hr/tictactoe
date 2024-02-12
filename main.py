@@ -5,11 +5,13 @@ def printtictactoetable(tictactoetable):
     print('-+-+-')
     print(tictactoetable[7] + '|' + tictactoetable[8] + '|' + tictactoetable[9])
     print("\n")
+    
 def spaceIsFree(position):
     if tictactoetable[position] == ' ':
         return True
     else:
         return False
+        
 def insertLetter(letter, position):
     if spaceIsFree(position):
         tictactoetable[position] = letter
@@ -30,6 +32,7 @@ def insertLetter(letter, position):
         position = int(input("Please enter different position:  "))
         insertLetter(letter, position)
         return
+        
 def checkForWin():
     if (tictactoetable[1] == tictactoetable[2] and tictactoetable[1] == tictactoetable[3] and tictactoetable[1] != ' '):
         return True
@@ -48,7 +51,9 @@ def checkForWin():
     elif (tictactoetable[7] == tictactoetable[5] and tictactoetable[7] == tictactoetable[3] and tictactoetable[7] != ' '):
         return True
     else:
+        
         return False
+        
 def checkWhichMarkWon(mark):
     if tictactoetable[1] == tictactoetable[2] and tictactoetable[1] == tictactoetable[3] and tictactoetable[1] == mark:
         return True
@@ -67,16 +72,22 @@ def checkWhichMarkWon(mark):
     elif (tictactoetable[7] == tictactoetable[5] and tictactoetable[7] == tictactoetable[3] and tictactoetable[7] == mark):
         return True
     else:
+        
         return False
+        
 def checkDraw():
     for key in tictactoetable.keys():
         if (tictactoetable[key] == ' '):
             return False
+    
     return True
+    
 def playerMove():
     position = int(input("Enter the position for 'O':  "))
     insertLetter(player, position)
+
     return
+    
 def compMove():
     bestScore = -800
     bestMove = 0
@@ -89,7 +100,9 @@ def compMove():
                 bestScore = score
                 bestMove = key
     insertLetter(bot, bestMove)
+    
     return
+
 def minimax(tictactoetable, depth, isMaximizing):
     if (checkWhichMarkWon(bot)):
         return 1
