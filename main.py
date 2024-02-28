@@ -102,7 +102,7 @@ def compMove():
     insertLetter(bot, bestMove)
     
     return
-
+***********************************************************************************************************************************************
 def minimax(tictactoetable, depth, isMaximizing):
     if (checkWhichMarkWon(bot)):
         return 1
@@ -110,7 +110,7 @@ def minimax(tictactoetable, depth, isMaximizing):
         return -1
     elif (checkDraw()):
         return 0
-
+************************************************************************************************************************************************
     if (isMaximizing):
         bestScore = -800
         for key in tictactoetable.keys():
@@ -121,7 +121,7 @@ def minimax(tictactoetable, depth, isMaximizing):
                 if (score > bestScore):
                     bestScore = score
         return bestScore
-
+**************************************************************************************************************************************************
     else:
         bestScore = 800
         for key in tictactoetable.keys():
@@ -132,8 +132,7 @@ def minimax(tictactoetable, depth, isMaximizing):
                 if (score < bestScore):
                     bestScore = score
         return bestScore
-
-
+************************************************************************************************************************************************
 tictactoetable = {1: ' ', 2: ' ', 3: ' ',
          4: ' ', 5: ' ', 6: ' ',
          7: ' ', 8: ' ', 9: ' '}
@@ -147,7 +146,6 @@ print("7, 8, 9 ")
 print("\n")
 player = 'O'
 bot = 'X'
-
 global firstComputerMove
 firstComputerMove = True
 
